@@ -1,0 +1,54 @@
+.note {
+    border: 1px solid;
+    width: 20rem;
+    border-radius: 5px;
+    background-color: rgb(237, 253, 253);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+        font-size: 1.5rem;
+        height: 10vh;
+        border-bottom: 1px solid;
+        padding: 0.5rem 0.2rem;
+        overflow-y: auto;
+    }
+
+    p {
+        height: 30vh;
+        padding: 1rem 0.2rem;
+        overflow-y: auto;
+        font-size: 1.1rem;
+        border-bottom: 1px solid;
+    }
+
+    .bottom {
+        display: flex;
+        width: 100%;
+        
+        justify-content: space-between;
+
+        button {
+            border: transparent;
+            background-color: inherit;
+            outline: none;
+            padding: 0.3rem;
+            width: fit-content;
+
+            // margin: 1rem;
+            cursor: pointer;
+
+            &:hover {
+                padding: calc(0.3rem - 2px);
+                border: 2px dashed;
+            }
+
+            img {
+                height: 1.5rem;
+                width: 1.5rem;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,39 @@
+.register {
+    text-align: center;
+
+    form {
+        width: 30rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: center;
+        margin: 30vh auto;
+        font-size: 1.3rem;
+        @media screen and (max-width:490px) {
+            width: 90%;
+        }
+        input,
+        button {
+            width: 80%;
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+
+        textarea{
+            width: 80%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            height: 8rem;
+            resize: none;
+        }
+
+        button {
+            background-color: rgb(169, 230, 251);
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgb(129, 216, 245);
+            }
+        }
+    }
+}
