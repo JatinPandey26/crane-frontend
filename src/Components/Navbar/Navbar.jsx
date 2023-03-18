@@ -36,7 +36,7 @@ const Navbar = () => {
       }
       <div className="right">
         {user && <div className="user"> <img src="/noavtar.png" alt="" /> <span>{user.username}</span></div>}
-        <Link className='link' to={user ? '/logout' : '/login'}> <span>{user ? <button onClick={logoutHandler}>Logout</button> : <button>Login/Signup</button>}</span> </Link>
+        <Link  className='link' to={user ? '/logout' : '/login'}> <span>{user ? <button onClick={logoutHandler}>Logout</button> : <button>Login/Signup</button>}</span> </Link>
       </div>
     </nav>
   )

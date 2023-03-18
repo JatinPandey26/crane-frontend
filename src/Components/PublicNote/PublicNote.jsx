@@ -25,7 +25,7 @@ const PublicNote = ({ note }) => {
 
     const mutation = useMutation({
         mutationFn: async (id) => {
-            const res = await axios.put(`http://localhost:8080/notes/like/${id}`, {}, { withCredentials: true })
+            const res = await axios.put(`https://crane-backend.vercel.app/notes/like/${id}`, {}, { withCredentials: true })
             console.log(
                 res
             );
