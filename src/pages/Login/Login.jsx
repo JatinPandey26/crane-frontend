@@ -10,7 +10,7 @@ const Login = () => {
   const navigate = useNavigate();
   const submitHandler = async (e) => {
     e.preventDefault();
-    const { data } = await axios.post('http://localhost:8080/users/login', { email, password }, { withCredentials: true });
+    const { data } = await axios.post('https://crane-backend.vercel.app/users/login', { email, password }, { withCredentials: true });
     setUser(data);
     setEmail('');
     setPassword('');

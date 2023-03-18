@@ -11,14 +11,14 @@ const Navbar = () => {
   const { user, setUser } = useContext(UserContext);
   const navigation = useNavigate();
   const logoutHandler = async () => {
-    await axios.get('http://localhost:8080/users/logout', { withCredentials: true })
+    await axios.get('https://crane-backend.vercel.app/users/logout', { withCredentials: true })
     setUser(null)
     navigation('/')
   }
 
-  
 
- 
+
+
   return (
     <nav className='navbar'>
       <button className='navToggle' onClick={() => setIsOpen(!isOpen)}>{isOpen ? <RxCross1 /> : <FaBars />}</button>

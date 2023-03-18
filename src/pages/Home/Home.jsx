@@ -12,13 +12,13 @@ const Home = () => {
     const [search, setsearch] = useState('')
     const { user } = useContext(UserContext);
     const navigate = useNavigate()
-    
-    
+
+
 
     const { isLoading, error, data: notes, refetch } = useQuery({
         queryKey: ['notes'],
         queryFn: async () => {
-            return await axios.get(`http://localhost:8080/notes/my/${user._id}?search=${search}&sort=${isNewestSort}`, { withCredentials: true })
+            return await axios.get(`https://crane-backend.vercel.app/notes/my/${user._id}?search=${search}&sort=${isNewestSort}`, { withCredentials: true })
         },
         enabled: !!user
     })

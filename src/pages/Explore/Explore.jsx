@@ -7,7 +7,7 @@ const Explore = () => {
     const { isLoading, error, data: res, refetch } = useQuery({
         queryKey: ['publicnotes'],
         queryFn: async () => {
-            return await axios.get(`http://localhost:8080/notes/public/`, { withCredentials: true })
+            return await axios.get(`https://crane-backend.vercel.app/notes/public/`, { withCredentials: true })
         }
     })
     return (

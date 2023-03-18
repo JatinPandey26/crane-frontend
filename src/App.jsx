@@ -18,7 +18,7 @@ function App() {
 
   useEffect(() => {
     const fecthUser = async () => {
-      const { data } = await axios.get('http://localhost:8080/users/me', { withCredentials: true })
+      const { data } = await axios.get('https://crane-backend.vercel.app/users/me', { withCredentials: true })
       setUser(data)
     }
     fecthUser()

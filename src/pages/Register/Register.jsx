@@ -14,7 +14,7 @@ const Register = () => {
     const navigate = useNavigate()
     const submitHandler = async (e) => {
         e.preventDefault();
-        const { data } = await axios.post('http://localhost:8080/users/register', { email, username, password }, {
+        const { data } = await axios.post('https://crane-backend.vercel.app/users/register', { email, username, password }, {
             withCredentials: true,
         })
         setUser(data);

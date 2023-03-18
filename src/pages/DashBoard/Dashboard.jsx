@@ -9,7 +9,7 @@ const Dashboard = () => {
     const { isLoading, error, data } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const { data } = await axios.get('http://localhost:8080/admin/users', { withCredentials: true });
+            const { data } = await axios.get('https://crane-backend.vercel.app/admin/users', { withCredentials: true });
             return data;
         }
     })
@@ -17,7 +17,7 @@ const Dashboard = () => {
     const { isLoading: notesLoading, error: notesError, data: notes } = useQuery({
         queryKey: ['notesAdmin'],
         queryFn: async () => {
-            const { data } = await axios.get('http://localhost:8080/admin/notes', { withCredentials: true });
+            const { data } = await axios.get('https://crane-backend.vercel.app/admin/notes', { withCredentials: true });
             return data;
         }
     })
@@ -25,7 +25,7 @@ const Dashboard = () => {
     const mutationRole = useMutation({
         mutationKey: ['changeRole'],
         mutationFn: async (userId) => {
-            return await axios.put('http://localhost:8080/admin/user/' + userId, {}, { withCredentials: true })
+            return await axios.put('https://crane-backend.vercel.app/admin/user/' + userId, {}, { withCredentials: true })
         },
         onSuccess: () => {
             queryClient.invalidateQueries(['users'])
@@ -35,7 +35,7 @@ const Dashboard = () => {
     const mutationDeleteUser = useMutation({
         mutationKey: ['deleteUser'],
         mutationFn: async (userId) => {
-            return await axios.delete('http://localhost:8080/admin/user/' + userId, { withCredentials: true })
+            return await axios.delete('https://crane-backend.vercel.app/admin/user/' + userId, { withCredentials: true })
         },
         onSuccess: () => {
             queryClient.invalidateQueries(['users'])
@@ -46,7 +46,7 @@ const Dashboard = () => {
     const mutationDeleteNote = useMutation({
         mutationKey: ['deleteNote'],
         mutationFn: async (noteId) => {
-            return await axios.delete('http://localhost:8080/admin/note/' + noteId, { withCredentials: true })
+            return await axios.delete('https://crane-backend.vercel.app/admin/note/' + noteId, { withCredentials: true })
         },
         onSuccess: () => {
             queryClient.invalidateQueries(['notesAdmin'])

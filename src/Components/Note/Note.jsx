@@ -10,7 +10,7 @@ const Note = ({ note }) => {
 
     const mutation = useMutation({
         mutationFn: async(id) => {
-            return await axios.delete(`http://localhost:8080/notes/delete/${id}`, { withCredentials: true })
+            return await axios.delete(`https://crane-backend.vercel.app/notes/delete/${id}`, { withCredentials: true })
         },
         onSuccess: () => {
             queryClient.invalidateQueries(['notes'])
@@ -21,7 +21,7 @@ const Note = ({ note }) => {
 
     const mutationToggle = useMutation({
         mutationFn: (id) => {
-            return axios.put(`http://localhost:8080/notes/${id}`, {}, { withCredentials: true })
+            return axios.put(`https://crane-backend.vercel.app/notes/${id}`, {}, { withCredentials: true })
         },
         onSuccess: () => {
             queryClient.invalidateQueries(['notes'])

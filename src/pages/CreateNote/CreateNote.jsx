@@ -10,7 +10,7 @@ const CreateNote = () => {
     const navigate = useNavigate();
     const submitHandler = async (e) => {
         e.preventDefault();
-        await axios.post('http://localhost:8080/notes/create', { title, description }, { withCredentials: true });
+        await axios.post('https://crane-backend.vercel.app/notes/create', { title, description }, { withCredentials: true });
         alert('Note Created Successfully')
         setTitle('');
         setDescription('');

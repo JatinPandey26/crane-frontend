@@ -15,7 +15,7 @@ const PublicNote = ({ note }) => {
         queryKey: [note._id],
         queryFn: async () => {
 
-            return await axios.get('http://localhost:8080/users/' + note.createdBy, { withCredentials: true });
+            return await axios.get('https://crane-backend.vercel.app/users/' + note.createdBy, { withCredentials: true });
         }
         ,
         enabled: !!note
